@@ -7,7 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { APP_ROUTES } from './app.routing';
-import { environment } from '../environments/environment'
+import { firebase } from '../environments/firebase'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { PersonalDataService } from './services/personal-data.service';
@@ -24,7 +24,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
   imports: [
     BrowserModule,
     APP_ROUTES,
-    AngularFireModule.initializeApp(environment.firebase,'Curriculum'),
+    AngularFireModule.initializeApp(firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule
   ],
