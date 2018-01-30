@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "cv"
+    "name": "web-worker-test"
   },
   "apps": [
     {
@@ -19,7 +19,6 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.css",
         "sass/styles.scss"
       ],
       "scripts": [],
@@ -27,7 +26,8 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "serviceWorker": true
     }
   ],
   "e2e": {
@@ -59,7 +59,6 @@
     "class": {
       "spec": false
     },
-    "component": {
-    }
+    "component": {}
   }
 }
