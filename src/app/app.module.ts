@@ -1,17 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
+
+import { environment } from '../environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { APP_ROUTES } from './app.routing';
-import { firebase } from '../environments/firebase'
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { PersonalDataService } from './services/personal-data.service';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -23,12 +22,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
   ],
   imports: [
     BrowserModule,
-    APP_ROUTES,
-    AngularFireModule.initializeApp(firebase),
-    AngularFireDatabaseModule,
-    AngularFirestoreModule
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    APP_ROUTES
   ],
-  providers: [PersonalDataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

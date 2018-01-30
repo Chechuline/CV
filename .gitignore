@@ -1,10 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# enviroment info
-src/environments/firebase.ts
-
 # compiled output
 /dist
+/dist-server
 /tmp
 /out-tsc
 
@@ -19,7 +17,6 @@ src/environments/firebase.ts
 *.launch
 .settings/
 *.sublime-workspace
-*.txt
 
 # IDE - VSCode
 .vscode/*

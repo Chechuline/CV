@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonalDataService } from '../services/personal-data.service';
+// import { PersonalDataService } from '../services/personal-data/personal-data.service';
+// import { PersonalData } from '../services/personal-data/personal-data';
 
 @Component({
   selector: 'app-body',
@@ -8,12 +9,18 @@ import { PersonalDataService } from '../services/personal-data.service';
 })
 export class BodyComponent implements OnInit {
 
-  items;
+  // datos:PersonalData;private ds:PersonalDataService
 
-  constructor(private ds:PersonalDataService) { }
+  constructor() { }
 
   ngOnInit() {
-   this.ds.getPersonalData().subscribe( res => { debugger;this.items = res;console.log(res)});
+    // this.ds.getPersonalData().subscribe(
+    //   data => {this.datos = data; console.log(data)}
+    // );
+    // this.ds.getFirestore().subscribe(
+    //   data => console.log(data)
+    // )
+  //  this.ds.getPersonalData().subscribe( res => { debugger;this.items = res;console.log(res)});
   }
 
 }
