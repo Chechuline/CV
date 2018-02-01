@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { APP_ROUTES } from './app.routing';
+import { ErrorHandler } from '@angular/core';
+import { AppErrorHandler } from './shared/app-errors-handler';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { APP_ROUTES } from './app.routing';
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     APP_ROUTES
   ],
-  providers: [],
+  providers: [
+    {provide:ErrorHandler, useClass:AppErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
